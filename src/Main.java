@@ -12,11 +12,17 @@ public class Main {
             if (userInput == 1) {
                 System.out.println("За какой месяц вы хотите ввести количество шагов: от 0 до 11, где 0- ЯНВ, 11- ДЕК?");
                 int month = scanner.nextInt();
-                System.out.println("За какой день вы хотите ввести количество шагов: от 1 до 30?");
-                int day = scanner.nextInt();
-                System.out.println("Введите количество шагов:");
-                int steps = scanner.nextInt();
-                stepTracker.saveSteps(month, day, steps);
+                if (month >= 0 & month <= 11) {
+                    System.out.println("За какой день вы хотите ввести количество шагов: от 1 до 30?");
+                    int day = scanner.nextInt();
+                    if (day > 0 & day <= 30) { // Да, упустил что дни начинаем с 1, спасибо!
+                        System.out.println("Введите количество шагов:");
+                        int steps = scanner.nextInt();
+                        if (steps >= 0) {
+                            stepTracker.saveSteps(month, day, steps);
+                        } else System.out.println("Введите корректное значение");
+                    } else System.out.println("Введите корректное значение");
+                } else System.out.println("Введите корректное значение");
             } else if (userInput == 2) {
                 System.out.println("За какой месяц вы хотите посмотреть статистику: от 0 до 11, где 0- ЯНВ, 11- ДЕК?");
                 int month = scanner.nextInt();

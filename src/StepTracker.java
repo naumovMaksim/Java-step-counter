@@ -21,15 +21,13 @@ public class StepTracker {
         return goalSteps;
     }
     void saveSteps(int month, int day, int steps) {
-        if (month >= 0 & month <= 11 & day >= 0 & day <= 30 & steps >= 0) {
             monthToData[month].dayData[day - 1] = monthToData[month].dayData[day - 1] + steps;
             System.out.println("Значение сохранено!");
-        } else System.out.println("Введите корректные значения");
     }
 
     void daySteps(int month) {
             for (int i = 0; i < monthToData[month].dayData.length; i++) {
-                System.out.print((i + 1) + " День: " + monthToData[month].dayData[i] + " , ");
+                System.out.print((i + 1) + " День: " + monthToData[month].dayData[i] + ", ");// Спасибо за уточнение, не заметил, сейчас точь в точь как в задаче: 1 день: 3000, 2 день: 2000, ..., 30 день: 10000
             }
             System.out.println(" ");
     }
@@ -81,7 +79,7 @@ public class StepTracker {
             System.out.println("Пройденая дистанция: " + converter.convertCentimeter(totalSteps(month)) + " км");
             System.out.println("Количество сожжённых килокалорий: " + converter.convertKilocalories(totalSteps(month)) + " килокалорий");
             System.out.println("Лучшая серия: " + bestSeries(month));
-        }else System.out.println("Введите корректные значения");
+        }else System.out.println("Введите корректное значение");
     }
     static class MonthData {
         int[] dayData = new int[30];
