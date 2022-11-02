@@ -26,10 +26,10 @@ public class StepTracker {
     }
 
     void daySteps(int month) {
-            for (int i = 0; i < monthToData[month].dayData.length; i++) {
-                System.out.print((i + 1) + " День: " + monthToData[month].dayData[i] + ", ");// Спасибо за уточнение, не заметил, сейчас точь в точь как в задаче: 1 день: 3000, 2 день: 2000, ..., 30 день: 10000
+            for (int i = 0; i < monthToData[month].dayData.length - 1; i++) {
+                System.out.print((i + 1) + " день: " + monthToData[month].dayData[i] + ", ");// Спасибо за уточнение, не заметил, сейчас точь в точь как в задаче: 1 день: 3000, 2 день: 2000, ..., 30 день: 10000
             }
-            System.out.println(" ");
+            System.out.println("30 день: " + monthToData[month].dayData[29]);
     }
 
     int totalSteps(int month) {
