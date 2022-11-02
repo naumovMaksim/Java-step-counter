@@ -6,12 +6,10 @@ public class Converter {
         centimeter = m;
         kilocalories = cal;
     }
-    void convertCentimeter(int steps) {
-        double distance = steps * centimeter;
-        System.out.println("Пройденая дистанция: " + distance + " км");
+    double convertCentimeter(int steps) {
+        return steps * centimeter;
     }
-    void convertKilocalories (int steps) {
-        double allCalories = steps * kilocalories;
-        System.out.println("Количество сожжённых килокалорий: " + allCalories + " килокалорий");
+    double convertKilocalories (int steps) {
+        return steps * kilocalories;
     }
 }
